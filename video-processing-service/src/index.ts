@@ -23,8 +23,9 @@ app.post('/process-video', (req, res) => {
     // Create ffmpeg command
     ffmpeg(inputFilePath)
         .outputOptions('-vf', 'scale=-1:360') // 360p
+        //.outputOptions('-vf', 'scale=-1:360,fps=10') for 10 fps, messing around
         .on('end', function() {
-            console.log('Processing completed successfully');
+            console.log('Processing completed succdocessfully');
             res.status(200).send('Processing completed successfully');
         })
         .on('error', function(err: any) {
