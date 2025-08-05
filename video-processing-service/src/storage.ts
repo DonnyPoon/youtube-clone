@@ -106,6 +106,7 @@ function deleteFile(filePath: string): Promise<void> {
             fs.unlink(filePath, (err) => {
                 if (err) {
                     console.log(`Failed to delete file at ${filePath}`, err);
+                    reject(err);
                 }
                 else {
                     console.log(`Successfully deleted file at ${filePath}`);
