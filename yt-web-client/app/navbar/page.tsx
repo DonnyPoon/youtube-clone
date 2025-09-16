@@ -1,7 +1,0 @@
-export default function Watch() {
-    return (
-        <div>
-            <h1>navbar</h1>
-        </div>
-    );
-}

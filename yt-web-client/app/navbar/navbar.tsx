@@ -1,7 +1,15 @@
-export default function Watch() {
+import Image from "next/image";
+import Link from "next/link";
+
+import style from "./navbar.module.css";
+
+export default function Navbar() {
     return (
-        <div>
-            <h1>navbar</h1>
-        </div>
+        <nav className={style.nav}>
+            <Link href="/">
+                <Image width={90} height={20}
+                    src="/youtube-logo.svg" alt="Youtube Logo" />
+            </Link>
+        </nav>
     );
 }
