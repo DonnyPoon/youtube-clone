@@ -19,7 +19,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 const auth = getAuth(app);
 
@@ -43,6 +42,6 @@ export function signOut() {
  * Trigger a callback when user auth state changes.
  * @returns A function to unsubscribe callback.
  */
-export function onUserStateChange(callback: (user: User | null) => void){
-    return onAuthStateChanged(auth, callback);
+export function onAuthStateChangedHelper(callback: (user: User | null) => void) {
+  return onAuthStateChanged(auth, callback);
 }
